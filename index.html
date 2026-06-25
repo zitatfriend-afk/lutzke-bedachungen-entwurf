@@ -26,7 +26,9 @@
 <meta property="og:title" content="Dachdecker Bad Sassendorf | Lutzke GmbH Bedachungen – Meisterbetrieb" />
 <meta property="og:description" content="Zuverlässige Dacharbeiten für Bad Sassendorf und den Kreis Soest. Dachsanierung, Neueindeckung, Flachdach, Dachfenster & Reparaturen vom Meisterbetrieb." />
 <meta property="og:url" content="https://lutzke-bedachungen.de/" />
-<meta property="og:image" content="https://lutzke-bedachungen.de/og-image.jpg" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1635424709961-f3a150459ad4?auto=format&fit=crop&w=1200&h=630&q=75" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -156,6 +158,33 @@
   .ba-wrap input[type=range]::-moz-range-thumb{height:46px;width:46px;border-radius:99px;background:#fff;border:3px solid var(--copper);cursor:ew-resize}
 
   .stat-num{font-variant-numeric:tabular-nums}
+
+  /* ---------- Hero Ken-Burns zoom ---------- */
+  @keyframes kenburns{0%{transform:scale(1.06) translate3d(0,0,0)}100%{transform:scale(1.18) translate3d(-1.2%, -1.5%,0)}}
+  .hero-zoom{animation:kenburns 26s ease-out forwards}
+  @media (prefers-reduced-motion:reduce){.hero-zoom{animation:none;transform:scale(1.06)}}
+
+  /* ---------- Image card: subtle zoom on hover ---------- */
+  .img-zoom{overflow:hidden}
+  .img-zoom img{transition:transform 1.1s cubic-bezier(.16,1,.3,1)}
+  .img-zoom:hover img{transform:scale(1.07)}
+  /* unify image look across the site */
+  .ph{filter:saturate(1.04) contrast(1.02);background:#1d2127}
+  .ba-pill{position:absolute;z-index:4;bottom:.7rem;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(15,17,20,.6);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);padding:.28rem .6rem;border-radius:99px;font-weight:600}
+
+  /* ---------- Header scroll-shrink (premium) ---------- */
+  #header .nav-bar{height:78px;transition:height .45s cubic-bezier(.16,1,.3,1)}
+  #header.scrolled .nav-bar{height:62px}
+  #header .brand-logo{width:44px;height:44px;transition:width .45s,height .45s}
+  #header.scrolled .brand-logo{width:38px;height:38px}
+  .nav-link{position:relative}
+  .nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;border-radius:2px;
+    background:linear-gradient(90deg,var(--copper),#d98a52);transform:scaleX(0);transform-origin:left;transition:transform .38s cubic-bezier(.16,1,.3,1)}
+  .nav-link:hover::after{transform:scaleX(1)}
+  .cta-shine{position:relative;overflow:hidden}
+  .cta-shine::before{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .7s}
+  .cta-shine:hover::before{left:140%}
 </style>
 </head>
 
@@ -182,10 +211,10 @@
 <!--  HEADER                                                       -->
 <!-- ============================================================= -->
 <header id="header" class="fixed top-0 lg:top-11 inset-x-0 z-50 border-b border-transparent">
-  <div class="max-w-container mx-auto px-6 h-[76px] flex items-center justify-between">
+  <div class="nav-bar max-w-container mx-auto px-6 flex items-center justify-between">
     <!-- Brand -->
     <a href="#top" class="flex items-center gap-3 group">
-      <span class="grid place-items-center w-11 h-11 rounded-xl bg-gradient-to-br from-copper to-roof shadow-glow">
+      <span class="brand-logo grid place-items-center rounded-xl bg-gradient-to-br from-copper to-roof shadow-glow shrink-0">
         <i data-lucide="home" class="w-5 h-5 text-white"></i>
       </span>
       <span class="leading-none">
@@ -204,7 +233,7 @@
     </nav>
 
     <div class="flex items-center gap-3">
-      <a href="#kontakt" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-copper hover:bg-copper-dark text-white font-semibold text-[14px] px-5 py-2.5 transition shadow-glow">
+      <a href="#kontakt" class="cta-shine hidden sm:inline-flex items-center gap-2 rounded-full bg-copper hover:bg-copper-dark text-white font-semibold text-[14px] px-5 py-2.5 transition-all duration-300 shadow-glow hover:-translate-y-0.5">
         <i data-lucide="calendar-check" class="w-4 h-4"></i> Kostenlose Beratung
       </a>
       <button id="hamb" class="hamb lg:hidden text-white p-2 -mr-2" aria-label="Menü">
@@ -232,13 +261,16 @@
 <!--  HERO                                                         -->
 <!-- ============================================================= -->
 <section id="top" class="relative min-h-[100svh] flex items-center overflow-hidden bg-ink-900 text-white">
-  <!-- INTERN: Hero-Hintergrundbild-Platzhalter → großes emotionales Dachdecker-/Dachpanorama-Foto -->
-  <div class="img-slot absolute inset-0" data-img="Hero: Dachdecker bei der Arbeit auf einem frisch eingedeckten Steildach, goldenes Abendlicht, Panorama">
-    <div class="img-ico"><i data-lucide="image" class="w-16 h-16"></i></div>
+  <!-- Hero-Foto (lizenzfrei · Unsplash) — INTERN: später gegen echtes Firmenfoto austauschbar -->
+  <div id="hero-media" class="hero-media absolute left-0 right-0 overflow-hidden will-change-transform" style="top:-12%;height:124%">
+    <img id="hero-img" class="hero-zoom absolute inset-0 w-full h-full object-cover will-change-transform"
+         src="https://images.unsplash.com/photo-1635424709961-f3a150459ad4?auto=format&fit=crop&w=1920&q=72"
+         alt="Dachdecker der Lutzke GmbH bei der Arbeit auf einem Steildach in Bad Sassendorf"
+         fetchpriority="high" decoding="async" />
   </div>
-  <div class="absolute inset-0 hero-grid opacity-60"></div>
-  <div class="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/70 to-ink-900/30"></div>
-  <div class="absolute inset-0 bg-gradient-to-r from-ink-900/90 via-ink-900/40 to-transparent"></div>
+  <div class="absolute inset-0 hero-grid opacity-25"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/75 to-ink-900/45"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/55 to-ink-900/10"></div>
 
   <div class="relative max-w-container mx-auto px-6 w-full pt-32 pb-20 lg:pt-28">
     <div class="max-w-3xl">
@@ -422,9 +454,11 @@
     <div class="grid lg:grid-cols-2 gap-14 items-center">
       <!-- Left: image placeholder -->
       <div class="reveal">
-        <div class="img-slot rounded-3xl aspect-[4/5] shadow-card" data-img="Warum wir: Dachdeckermeister/Team-Porträt vor Firmenfahrzeug oder auf der Baustelle">
-          <div class="img-ico"><i data-lucide="users" class="w-16 h-16"></i></div>
-          <span class="img-tag">Platzhalter · Team-Foto</span>
+        <div class="img-zoom relative rounded-3xl aspect-[4/5] shadow-card ring-1 ring-white/10">
+          <img class="ph w-full h-full object-cover" loading="lazy" decoding="async"
+               src="https://images.unsplash.com/photo-1635424824849-1b09bdcc55b1?auto=format&fit=crop&w=1000&q=72"
+               alt="Dachdeckermeister der Lutzke GmbH bei der präzisen Arbeit auf dem Dach" />
+          <div class="absolute inset-0 bg-gradient-to-t from-ink-900/40 to-transparent pointer-events-none"></div>
         </div>
         <!-- Floating badge -->
         <div class="relative -mt-16 ml-6 w-max">
@@ -504,16 +538,16 @@
       <figure class="reveal break-inside-avoid rounded-2xl overflow-hidden shadow-soft bg-ink-900 group">
         <div class="ba-wrap relative aspect-[4/3] select-none" id="ba">
           <!-- After (full) -->
-          <div class="img-slot absolute inset-0" data-img="Nachher: frisch saniertes Steildach">
-            <div class="img-ico"><i data-lucide="image" class="w-12 h-12"></i></div>
-            <span class="img-tag">Nachher</span>
-          </div>
+          <img class="absolute inset-0 w-full h-full object-cover ph" loading="lazy" decoding="async"
+               src="https://images.unsplash.com/photo-1557671009-600c3a1973ca?auto=format&fit=crop&w=1000&q=72"
+               alt="Frisch eingedecktes Ziegeldach nach der Dachsanierung durch die Lutzke GmbH in Bad Sassendorf" />
+          <span class="ba-pill" style="right:.7rem">Nachher</span>
           <!-- Before (clipped) -->
           <div id="ba-before" class="absolute inset-0" style="clip-path:inset(0 50% 0 0)">
-            <div class="img-slot absolute inset-0" style="filter:grayscale(.55) brightness(.7)" data-img="Vorher: altes, verwittertes Dach">
-              <div class="img-ico"><i data-lucide="image-off" class="w-12 h-12"></i></div>
-              <span class="img-tag">Vorher</span>
-            </div>
+            <img class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" style="filter:grayscale(.5) brightness(.6)"
+                 src="https://images.unsplash.com/photo-1518736346281-76873166a64a?auto=format&fit=crop&w=1000&q=72"
+                 alt="Altes, verwittertes Dach vor der Sanierung" />
+            <span class="ba-pill" style="left:.7rem">Vorher</span>
           </div>
           <!-- handle line -->
           <div id="ba-line" class="absolute top-0 bottom-0 w-0.5 bg-white/90 pointer-events-none" style="left:50%">
@@ -532,9 +566,10 @@
 
       <!-- gallery cards -->
       <figure class="reveal break-inside-avoid rounded-2xl overflow-hidden shadow-soft relative group" data-delay="1">
-        <div class="img-slot aspect-[3/4]" data-img="Neueindeckung Steildach mit Tonziegeln">
-          <div class="img-ico"><i data-lucide="image" class="w-12 h-12"></i></div>
-          <span class="img-tag">Platzhalter · Projektfoto</span>
+        <div class="aspect-[3/4] overflow-hidden">
+          <img class="ph w-full h-full object-cover transition-transform duration-[1100ms] ease-out group-hover:scale-110" loading="lazy" decoding="async"
+               src="https://images.unsplash.com/photo-1563993356056-b23a9cd265ad?auto=format&fit=crop&w=800&q=72"
+               alt="Neu eingedecktes Steildach mit Tonziegeln, Referenzprojekt im Kreis Soest" />
         </div>
         <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-ink-900/90 to-transparent translate-y-2 group-hover:translate-y-0 transition">
           <h3 class="font-display font-bold text-white">Neueindeckung mit Tonziegel</h3>
@@ -543,9 +578,10 @@
       </figure>
 
       <figure class="reveal break-inside-avoid rounded-2xl overflow-hidden shadow-soft relative group" data-delay="2">
-        <div class="img-slot aspect-square" data-img="Flachdach Gewerbeobjekt mit Abdichtung">
-          <div class="img-ico"><i data-lucide="image" class="w-12 h-12"></i></div>
-          <span class="img-tag">Platzhalter · Projektfoto</span>
+        <div class="aspect-square overflow-hidden">
+          <img class="ph w-full h-full object-cover transition-transform duration-[1100ms] ease-out group-hover:scale-110" loading="lazy" decoding="async"
+               src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=72"
+               alt="Modernes Gebäude mit Flachdach – Referenz für Flachdach-Abdichtung" />
         </div>
         <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-ink-900/90 to-transparent translate-y-2 group-hover:translate-y-0 transition">
           <h3 class="font-display font-bold text-white">Flachdach Gewerbehalle</h3>
@@ -554,9 +590,10 @@
       </figure>
 
       <figure class="reveal break-inside-avoid rounded-2xl overflow-hidden shadow-soft relative group">
-        <div class="img-slot aspect-square" data-img="Dachfenster-Einbau, helles Dachgeschoss">
-          <div class="img-ico"><i data-lucide="image" class="w-12 h-12"></i></div>
-          <span class="img-tag">Platzhalter · Projektfoto</span>
+        <div class="aspect-square overflow-hidden">
+          <img class="ph w-full h-full object-cover transition-transform duration-[1100ms] ease-out group-hover:scale-110" loading="lazy" decoding="async"
+               src="https://images.unsplash.com/photo-1590365876016-da05ac533e83?auto=format&fit=crop&w=800&q=72"
+               alt="Dach mit eingebautem Dachfenster für ein helles Dachgeschoss" />
         </div>
         <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-ink-900/90 to-transparent translate-y-2 group-hover:translate-y-0 transition">
           <h3 class="font-display font-bold text-white">Dachfenster &amp; Gauben</h3>
@@ -565,9 +602,10 @@
       </figure>
 
       <figure class="reveal break-inside-avoid rounded-2xl overflow-hidden shadow-soft relative group" data-delay="1">
-        <div class="img-slot aspect-[3/4]" data-img="Schieferdach Detailaufnahme Handwerk">
-          <div class="img-ico"><i data-lucide="image" class="w-12 h-12"></i></div>
-          <span class="img-tag">Platzhalter · Projektfoto</span>
+        <div class="aspect-[3/4] overflow-hidden">
+          <img class="ph w-full h-full object-cover transition-transform duration-[1100ms] ease-out group-hover:scale-110" loading="lazy" decoding="async"
+               src="https://images.unsplash.com/photo-1710139323182-69622cad5c3b?auto=format&fit=crop&w=800&q=72"
+               alt="Wohnhäuser mit hochwertiger Dacheindeckung – Referenzprojekt Bad Sassendorf" />
         </div>
         <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-ink-900/90 to-transparent translate-y-2 group-hover:translate-y-0 transition">
           <h3 class="font-display font-bold text-white">Schiefer-Eindeckung</h3>
@@ -576,9 +614,10 @@
       </figure>
 
       <figure class="reveal break-inside-avoid rounded-2xl overflow-hidden shadow-soft relative group" data-delay="2">
-        <div class="img-slot aspect-square" data-img="Carport aus Holz, modern">
-          <div class="img-ico"><i data-lucide="image" class="w-12 h-12"></i></div>
-          <span class="img-tag">Platzhalter · Projektfoto</span>
+        <div class="aspect-square overflow-hidden">
+          <img class="ph w-full h-full object-cover transition-transform duration-[1100ms] ease-out group-hover:scale-110" loading="lazy" decoding="async"
+               src="https://images.unsplash.com/photo-1503594384566-461fe158e797?auto=format&fit=crop&w=800&q=72"
+               alt="Modernes Holzhaus mit Carport in Holzbauweise" />
         </div>
         <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-ink-900/90 to-transparent translate-y-2 group-hover:translate-y-0 transition">
           <h3 class="font-display font-bold text-white">Carport in Holzbauweise</h3>
@@ -876,10 +915,12 @@
           </div>
         </div>
 
-        <!-- Google Maps Platzhalter -->
-        <div class="reveal mt-8 img-slot rounded-2xl h-52 border border-white/10" data-img="Google-Maps-Karte: Firmenstandort Bad Sassendorf einbetten (iframe)" data-delay="2">
-          <div class="img-ico flex-col gap-2"><i data-lucide="map" class="w-10 h-10"></i></div>
-          <span class="img-tag">Platzhalter · Google-Maps-Einbettung</span>
+        <!-- Google Maps (Einbettung ohne API-Key; INTERN: bei echter Adresse q= anpassen) -->
+        <div class="reveal mt-8 rounded-2xl h-52 overflow-hidden border border-white/10 ring-1 ring-white/5 relative" data-delay="2">
+          <iframe title="Standort Lutzke GmbH Bedachungen in Bad Sassendorf" loading="lazy" class="w-full h-full"
+                  style="border:0;filter:grayscale(.3) contrast(1.05)"
+                  src="https://maps.google.com/maps?q=Bad%20Sassendorf&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
 
@@ -992,8 +1033,8 @@
         <a href="#" class="hover:text-copper-light transition">AGB</a>
       </div>
     </div>
-    <!-- INTERN: Demo-Hinweis – vor echtem Livegang entfernen -->
-    <p class="mt-6 text-center text-[11px] text-white/25">Unverbindlicher Website-Entwurf · Bilder sind Platzhalter und werden durch echte Fotos der Lutzke GmbH ersetzt.</p>
+    <!-- INTERN: Demo-Hinweis – vor echtem Livegang entfernen. Abbildungen sind lizenzfreie Beispielfotos. -->
+    <p class="mt-6 text-center text-[11px] text-white/20">Unverbindlicher Entwurf · Abbildungen sind lizenzfreie Beispielfotos und werden durch eigene Aufnahmen der Lutzke GmbH ersetzt.</p>
   </div>
 </footer>
 
@@ -1146,8 +1187,22 @@
     return false;
   }
 
-  // Active year
-  // (kept static 2026 in footer)
+  // Hero parallax (subtle, rAF-throttled) — moves the oversized media container,
+  // while the Ken-Burns zoom stays on the inner <img> (no transform conflict).
+  const heroMedia = document.getElementById('hero-media');
+  if (heroMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let ticking = false;
+    const onParallax = () => {
+      const y = window.scrollY;
+      if (y < window.innerHeight * 1.3) {
+        heroMedia.style.transform = `translate3d(0, ${y * 0.12}px, 0)`;
+      }
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(onParallax); ticking = true; }
+    }, { passive: true });
+  }
 </script>
 </body>
 </html>
