@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============================================================= -->
+<!--  SEO  ·  Lutzke GmbH Bedachungen · Bad Sassendorf            -->
+<!-- ============================================================= -->
+<title>Dachdecker Bad Sassendorf | Lutzke GmbH Bedachungen – Meisterbetrieb im Kreis Soest</title>
+<meta name="description" content="Lutzke GmbH Bedachungen – Ihr Dachdecker-Meisterbetrieb in Bad Sassendorf. Dachsanierung, Neueindeckung, Flachdach, Dachfenster & Dachreparaturen im Kreis Soest. Jetzt kostenlose Beratung anfragen." />
+<meta name="keywords" content="Dachdecker Bad Sassendorf, Dachsanierung Bad Sassendorf, Bedachungen Bad Sassendorf, Flachdach Bad Sassendorf, Dachreparatur Bad Sassendorf, Dachdecker Kreis Soest, Dachdeckermeister Bad Sassendorf" />
+<meta name="author" content="Lutzke GmbH Bedachungen" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://lutzke-bedachungen.de/" />
+<meta name="theme-color" content="#15181c" />
+<meta name="geo.region" content="DE-NW" />
+<meta name="geo.placename" content="Bad Sassendorf" />
+<meta name="geo.position" content="51.5847;8.1639" />
+<meta name="ICBM" content="51.5847, 8.1639" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:site_name" content="Lutzke GmbH Bedachungen" />
+<meta property="og:title" content="Dachdecker Bad Sassendorf | Lutzke GmbH Bedachungen – Meisterbetrieb" />
+<meta property="og:description" content="Zuverlässige Dacharbeiten für Bad Sassendorf und den Kreis Soest. Dachsanierung, Neueindeckung, Flachdach, Dachfenster & Reparaturen vom Meisterbetrieb." />
+<meta property="og:url" content="https://lutzke-bedachungen.de/" />
+<meta property="og:image" content="https://lutzke-bedachungen.de/og-image.jpg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dachdecker Bad Sassendorf | Lutzke GmbH Bedachungen" />
+<meta name="twitter:description" content="Qualität auf jedem Dach – Ihr Meisterbetrieb für den Kreis Soest." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- Tailwind (Play CDN – für die Demo; in Produktion via Build-Step) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Sora', 'system-ui', 'sans-serif'],
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          ink:    { DEFAULT: '#15181c', 900: '#0f1114', 800: '#15181c', 700: '#1d2127', 600: '#272c34' },
+          slate2: '#3a414b',
+          mist:   '#f6f7f9',
+          copper: { DEFAULT: '#c2703d', light: '#d98a52', dark: '#a3592c', 50: '#fbf1ea' },
+          roof:   '#a23b2d',
+        },
+        boxShadow: {
+          card: '0 10px 40px -12px rgba(15,17,20,0.18)',
+          soft: '0 4px 24px -8px rgba(15,17,20,0.12)',
+          glow: '0 20px 60px -20px rgba(194,112,61,0.45)',
+        },
+        maxWidth: { container: '1240px' },
+      }
+    }
+  }
+</script>
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<style>
+  :root { --copper:#c2703d; }
+  body { font-family:'Inter',sans-serif; background:#ffffff; color:#272c34; -webkit-font-smoothing:antialiased; }
+  ::selection { background:#c2703d; color:#fff; }
+  h1,h2,h3,h4,.font-display { font-family:'Sora',sans-serif; letter-spacing:-0.02em; }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar{width:11px} ::-webkit-scrollbar-track{background:#15181c}
+  ::-webkit-scrollbar-thumb{background:#3a414b;border-radius:9px;border:2px solid #15181c}
+  ::-webkit-scrollbar-thumb:hover{background:var(--copper)}
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+  .reveal.is-visible{opacity:1;transform:none}
+  .reveal[data-delay="1"]{transition-delay:.08s}
+  .reveal[data-delay="2"]{transition-delay:.16s}
+  .reveal[data-delay="3"]{transition-delay:.24s}
+  .reveal[data-delay="4"]{transition-delay:.32s}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  /* ---------- Placeholder image system ----------
+     INTERN: Jeder .img-slot ist ein austauschbarer Bild-Platzhalter.
+     Später einfach durch <img src="echtes-foto.jpg"> ersetzen.
+     Siehe data-img Attribut für das vorgesehene Motiv.            */
+  .img-slot{position:relative;overflow:hidden;background:#1d2127;isolation:isolate}
+  .img-slot::before{
+    content:"";position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(120% 90% at 18% 12%, rgba(217,138,82,.42), transparent 55%),
+      radial-gradient(120% 120% at 90% 100%, rgba(162,59,45,.40), transparent 55%),
+      linear-gradient(135deg,#1d2127 0%,#272c34 55%,#15181c 100%);
+  }
+  .img-slot::after{ /* feine Dachlinien-Struktur */
+    content:"";position:absolute;inset:0;z-index:1;opacity:.5;
+    background-image:
+      repeating-linear-gradient(135deg, rgba(255,255,255,.05) 0 2px, transparent 2px 26px),
+      repeating-linear-gradient(45deg, rgba(255,255,255,.035) 0 2px, transparent 2px 26px);
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,.25));
+  }
+  .img-slot > .img-ico{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.28)}
+  .img-tag{position:absolute;z-index:3;bottom:.7rem;left:.7rem;font-size:.62rem;letter-spacing:.12em;
+    text-transform:uppercase;color:rgba(255,255,255,.78);background:rgba(15,17,20,.55);
+    backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.14);padding:.28rem .6rem;border-radius:99px;font-weight:600}
+
+  /* ---------- Glass ---------- */
+  .glass{background:rgba(255,255,255,.08);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14)}
+  .glass-dark{background:rgba(15,17,20,.55);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.10)}
+
+  /* ---------- Hero roofline ---------- */
+  .hero-grid{background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px}
+
+  /* ---------- Service card hover ---------- */
+  .svc{transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s,border-color .45s}
+  .svc:hover{transform:translateY(-6px)}
+  .svc .svc-ico{transition:transform .45s cubic-bezier(.16,1,.3,1),background .45s,color .45s}
+  .svc:hover .svc-ico{transform:scale(1.08) rotate(-4deg)}
+  .svc .arrow{opacity:0;transform:translateX(-6px);transition:.4s}
+  .svc:hover .arrow{opacity:1;transform:none}
+
+  /* ---------- Underline link ---------- */
+  .ul{background-image:linear-gradient(var(--copper),var(--copper));background-size:0% 2px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .4s}
+  .ul:hover{background-size:100% 2px}
+
+  /* ---------- FAQ ---------- */
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.16,1,.3,1)}
+  .faq-item.open .faq-a{max-height:340px}
+  .faq-item.open .faq-chev{transform:rotate(180deg)}
+  .faq-chev{transition:transform .4s}
+
+  /* ---------- Header ---------- */
+  #header{transition:background .4s,box-shadow .4s,padding .4s,border-color .4s}
+  #header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 6px 30px -16px rgba(15,17,20,.35);border-color:rgba(15,17,20,.08)}
+  #header.scrolled .nav-link{color:#272c34}
+  #header.scrolled .brand-sub{color:#5b626c}
+  #header.scrolled .brand-mark{color:#15181c}
+  #header.scrolled .hamb{color:#15181c}
+
+  .float-cta{box-shadow:0 14px 40px -10px rgba(194,112,61,.6)}
+  @keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(194,112,61,.5)}70%{box-shadow:0 0 0 16px rgba(194,112,61,0)}100%{box-shadow:0 0 0 0 rgba(194,112,61,0)}}
+  .pulse{animation:pulse-ring 2.4s infinite}
+
+  /* before/after */
+  .ba-wrap input[type=range]{-webkit-appearance:none;appearance:none;background:transparent}
+  .ba-wrap input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;height:46px;width:46px;border-radius:99px;background:#fff;border:3px solid var(--copper);cursor:ew-resize;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+  .ba-wrap input[type=range]::-moz-range-thumb{height:46px;width:46px;border-radius:99px;background:#fff;border:3px solid var(--copper);cursor:ew-resize}
+
+  .stat-num{font-variant-numeric:tabular-nums}
+</style>
+</head>
+
+<body class="bg-white text-ink-600 antialiased overflow-x-hidden">
+
+<!-- ============================================================= -->
+<!--  TOP BAR                                                      -->
+<!-- ============================================================= -->
+<div class="hidden lg:block bg-ink-900 text-white/70 text-[13px]">
+  <div class="max-w-container mx-auto px-6 h-11 flex items-center justify-between">
+    <div class="flex items-center gap-6">
+      <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-copper-light"></i>Bad Sassendorf · Kreis Soest</span>
+      <span class="flex items-center gap-2"><i data-lucide="clock" class="w-3.5 h-3.5 text-copper-light"></i>Mo–Fr 07:00–17:00 Uhr</span>
+      <span class="flex items-center gap-2"><i data-lucide="badge-check" class="w-3.5 h-3.5 text-copper-light"></i>Dachdecker-Meisterbetrieb</span>
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="#kontakt" class="flex items-center gap-2 hover:text-white transition"><i data-lucide="mail" class="w-3.5 h-3.5 text-copper-light"></i>info@lutzke-bedachungen.de</a>
+      <a href="tel:+4929217120800" class="flex items-center gap-2 text-white font-semibold hover:text-copper-light transition"><i data-lucide="phone-call" class="w-3.5 h-3.5 text-copper-light"></i>02921 71 20 800</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================= -->
+<!--  HEADER                                                       -->
+<!-- ============================================================= -->
+<header id="header" class="fixed top-0 lg:top-11 inset-x-0 z-50 border-b border-transparent">
+  <div class="max-w-container mx-auto px-6 h-[76px] flex items-center justify-between">
+    <!-- Brand -->
+    <a href="#top" class="flex items-center gap-3 group">
+      <span class="grid place-items-center w-11 h-11 rounded-xl bg-gradient-to-br from-copper to-roof shadow-glow">
+        <i data-lucide="home" class="w-5 h-5 text-white"></i>
+      </span>
+      <span class="leading-none">
+        <span class="brand-mark block font-display font-extrabold text-[19px] tracking-tight text-white transition-colors">LUTZKE</span>
+        <span class="brand-sub block text-[11px] tracking-[.22em] uppercase text-white/60 transition-colors">Bedachungen GmbH</span>
+      </span>
+    </a>
+
+    <!-- Nav -->
+    <nav class="hidden lg:flex items-center gap-9 text-[15px] font-medium">
+      <a href="#leistungen" class="nav-link text-white/85 hover:text-copper-light transition">Leistungen</a>
+      <a href="#warum" class="nav-link text-white/85 hover:text-copper-light transition">Warum wir</a>
+      <a href="#referenzen" class="nav-link text-white/85 hover:text-copper-light transition">Referenzen</a>
+      <a href="#ablauf" class="nav-link text-white/85 hover:text-copper-light transition">Ablauf</a>
+      <a href="#faq" class="nav-link text-white/85 hover:text-copper-light transition">FAQ</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#kontakt" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-copper hover:bg-copper-dark text-white font-semibold text-[14px] px-5 py-2.5 transition shadow-glow">
+        <i data-lucide="calendar-check" class="w-4 h-4"></i> Kostenlose Beratung
+      </a>
+      <button id="hamb" class="hamb lg:hidden text-white p-2 -mr-2" aria-label="Menü">
+        <i data-lucide="menu" class="w-7 h-7"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-ink-900/98 backdrop-blur-xl border-t border-white/10">
+    <nav class="px-6 py-6 flex flex-col gap-1 text-white">
+      <a href="#leistungen" class="mob-link py-3 border-b border-white/5 flex items-center justify-between">Leistungen <i data-lucide="chevron-right" class="w-4 h-4 text-copper-light"></i></a>
+      <a href="#warum" class="mob-link py-3 border-b border-white/5 flex items-center justify-between">Warum wir <i data-lucide="chevron-right" class="w-4 h-4 text-copper-light"></i></a>
+      <a href="#referenzen" class="mob-link py-3 border-b border-white/5 flex items-center justify-between">Referenzen <i data-lucide="chevron-right" class="w-4 h-4 text-copper-light"></i></a>
+      <a href="#ablauf" class="mob-link py-3 border-b border-white/5 flex items-center justify-between">Ablauf <i data-lucide="chevron-right" class="w-4 h-4 text-copper-light"></i></a>
+      <a href="#bewertungen" class="mob-link py-3 border-b border-white/5 flex items-center justify-between">Bewertungen <i data-lucide="chevron-right" class="w-4 h-4 text-copper-light"></i></a>
+      <a href="#faq" class="mob-link py-3 border-b border-white/5 flex items-center justify-between">FAQ <i data-lucide="chevron-right" class="w-4 h-4 text-copper-light"></i></a>
+      <a href="#kontakt" class="mob-link mt-4 rounded-full bg-copper text-center font-semibold py-3.5">Kostenlose Beratung anfragen</a>
+      <a href="tel:+4929217120800" class="mob-link mt-2 text-center text-white/70 py-2 flex items-center justify-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> 02921 71 20 800</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================================= -->
+<!--  HERO                                                         -->
+<!-- ============================================================= -->
+<section id="top" class="relative min-h-[100svh] flex items-center overflow-hidden bg-ink-900 text-white">
+  <!-- INTERN: Hero-Hintergrundbild-Platzhalter → großes emotionales Dachdecker-/Dachpanorama-Foto -->
+  <div class="img-slot absolute inset-0" data-img="Hero: Dachdecker bei der Arbeit auf einem frisch eingedeckten Steildach, goldenes Abendlicht, Panorama">
+    <div class="img-ico"><i data-lucide="image" class="w-16 h-16"></i></div>
+  </div>
+  <div class="absolute inset-0 hero-grid opacity-60"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/70 to-ink-900/30"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-ink-900/90 via-ink-900/40 to-transparent"></div>
+
+  <div class="relative max-w-container mx-auto px-6 w-full pt-32 pb-20 lg:pt-28">
+    <div class="max-w-3xl">
+      <div class="reveal inline-flex items-center gap-2.5 rounded-full glass px-4 py-2 text-[13px] font-medium text-white/90 mb-7">
+        <span class="flex h-2 w-2 relative"><span class="animate-ping absolute h-2 w-2 rounded-full bg-copper-light opacity-75"></span><span class="rounded-full h-2 w-2 bg-copper"></span></span>
+        Meisterbetrieb für Bad Sassendorf &amp; den Kreis Soest
+      </div>
+
+      <h1 class="reveal font-display font-extrabold leading-[0.98] text-[clamp(2.7rem,7vw,5.4rem)]" data-delay="1">
+        Qualität auf<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-copper-light via-copper to-roof">jedem Dach.</span>
+      </h1>
+
+      <p class="reveal mt-6 text-lg md:text-xl text-white/75 max-w-xl leading-relaxed" data-delay="2">
+        Zuverlässige Dacharbeiten vom Fachbetrieb – sauber ausgeführt, fair kalkuliert und termintreu. Für Privat- und Gewerbekunden in Bad Sassendorf und Umgebung.
+      </p>
+
+      <!-- Service pills -->
+      <div class="reveal mt-8 flex flex-wrap gap-2.5" data-delay="3">
+        <span class="glass rounded-full px-4 py-2 text-sm text-white/90">Dachsanierung</span>
+        <span class="glass rounded-full px-4 py-2 text-sm text-white/90">Neueindeckung</span>
+        <span class="glass rounded-full px-4 py-2 text-sm text-white/90">Flachdach</span>
+        <span class="glass rounded-full px-4 py-2 text-sm text-white/90">Dachfenster</span>
+        <span class="glass rounded-full px-4 py-2 text-sm text-white/90">Dachreparaturen</span>
+      </div>
+
+      <!-- CTAs -->
+      <div class="reveal mt-9 flex flex-col sm:flex-row gap-4" data-delay="4">
+        <a href="#kontakt" class="group inline-flex items-center justify-center gap-2.5 rounded-full bg-copper hover:bg-copper-dark text-white font-semibold text-base px-8 py-4 transition shadow-glow">
+          <i data-lucide="calendar-check" class="w-5 h-5"></i> Kostenlose Beratung
+          <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+        </a>
+        <a href="#referenzen" class="inline-flex items-center justify-center gap-2.5 rounded-full glass hover:bg-white/15 text-white font-semibold text-base px-8 py-4 transition">
+          <i data-lucide="images" class="w-5 h-5"></i> Referenzen ansehen
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero trust row -->
+    <div class="reveal mt-14 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden glass-dark max-w-3xl">
+      <div class="p-5 text-center">
+        <div class="font-display font-extrabold text-3xl text-white"><span class="stat-num" data-count="35">0</span>+</div>
+        <div class="text-[12px] uppercase tracking-wider text-white/55 mt-1">Jahre Erfahrung</div>
+      </div>
+      <div class="p-5 text-center">
+        <div class="font-display font-extrabold text-3xl text-white"><span class="stat-num" data-count="1800">0</span>+</div>
+        <div class="text-[12px] uppercase tracking-wider text-white/55 mt-1">Dächer realisiert</div>
+      </div>
+      <div class="p-5 text-center">
+        <div class="font-display font-extrabold text-3xl text-white flex items-center justify-center gap-1">4,9<i data-lucide="star" class="w-5 h-5 text-copper-light fill-copper-light"></i></div>
+        <div class="text-[12px] uppercase tracking-wider text-white/55 mt-1">Google Bewertung</div>
+      </div>
+      <div class="p-5 text-center">
+        <div class="font-display font-extrabold text-3xl text-white"><span class="stat-num" data-count="100">0</span>%</div>
+        <div class="text-[12px] uppercase tracking-wider text-white/55 mt-1">Meisterqualität</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#vertrauen" class="hidden lg:flex absolute bottom-7 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-white/50 hover:text-white transition">
+    <span class="text-[11px] uppercase tracking-[.2em]">Mehr entdecken</span>
+    <i data-lucide="chevron-down" class="w-5 h-5 animate-bounce"></i>
+  </a>
+</section>
+
+<!-- ============================================================= -->
+<!--  VERTRAUEN / TRUST STRIP                                       -->
+<!-- ============================================================= -->
+<section id="vertrauen" class="bg-mist border-b border-ink-900/5">
+  <div class="max-w-container mx-auto px-6 py-12">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <div class="reveal flex flex-col items-center text-center gap-3">
+        <span class="grid place-items-center w-12 h-12 rounded-xl bg-copper-50 text-copper"><i data-lucide="award" class="w-6 h-6"></i></span>
+        <span class="text-sm font-semibold text-ink-800 leading-snug">Jahrzehntelange<br>Erfahrung</span>
+      </div>
+      <div class="reveal flex flex-col items-center text-center gap-3" data-delay="1">
+        <span class="grid place-items-center w-12 h-12 rounded-xl bg-copper-50 text-copper"><i data-lucide="gem" class="w-6 h-6"></i></span>
+        <span class="text-sm font-semibold text-ink-800 leading-snug">Hochwertige<br>Materialien</span>
+      </div>
+      <div class="reveal flex flex-col items-center text-center gap-3" data-delay="2">
+        <span class="grid place-items-center w-12 h-12 rounded-xl bg-copper-50 text-copper"><i data-lucide="sparkles" class="w-6 h-6"></i></span>
+        <span class="text-sm font-semibold text-ink-800 leading-snug">Saubere<br>Arbeitsweise</span>
+      </div>
+      <div class="reveal flex flex-col items-center text-center gap-3" data-delay="3">
+        <span class="grid place-items-center w-12 h-12 rounded-xl bg-copper-50 text-copper"><i data-lucide="calendar-clock" class="w-6 h-6"></i></span>
+        <span class="text-sm font-semibold text-ink-800 leading-snug">Zuverlässige<br>Terminplanung</span>
+      </div>
+      <div class="reveal flex flex-col items-center text-center gap-3 col-span-2 md:col-span-1" data-delay="4">
+        <span class="grid place-items-center w-12 h-12 rounded-xl bg-copper-50 text-copper"><i data-lucide="handshake" class="w-6 h-6"></i></span>
+        <span class="text-sm font-semibold text-ink-800 leading-snug">Persönliche<br>Beratung</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!--  LEISTUNGEN                                                    -->
+<!-- ============================================================= -->
+<section id="leistungen" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-container mx-auto px-6">
+    <div class="max-w-2xl mb-14">
+      <span class="reveal inline-flex items-center gap-2 text-copper font-semibold text-sm uppercase tracking-[.18em]"><span class="w-8 h-px bg-copper"></span>Unsere Leistungen</span>
+      <h2 class="reveal mt-4 font-display font-extrabold text-ink-900 text-[clamp(2rem,4.5vw,3.2rem)] leading-tight" data-delay="1">Alles rund ums Dach – aus einer Hand.</h2>
+      <p class="reveal mt-4 text-lg text-ink-600/80 leading-relaxed" data-delay="2">Vom kleinen Reparaturauftrag bis zur kompletten Neueindeckung: Wir planen, decken und warten Dächer im Kreis Soest mit handwerklicher Präzision.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- card -->
+      <article class="svc reveal group rounded-2xl border border-ink-900/8 bg-white p-7 shadow-soft hover:shadow-card hover:border-copper/30">
+        <span class="svc-ico grid place-items-center w-14 h-14 rounded-2xl bg-ink-900 text-copper-light group-hover:bg-copper group-hover:text-white"><i data-lucide="house" class="w-7 h-7"></i></span>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink-900">Steildächer</h3>
+        <p class="mt-2 text-ink-600/80 leading-relaxed text-[15px]">Eindeckung mit Ziegeln, Schiefer oder Metall – langlebig, dicht und optisch perfekt auf Ihr Haus abgestimmt.</p>
+        <span class="arrow mt-4 inline-flex items-center gap-1.5 text-copper font-semibold text-sm">Mehr erfahren <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </article>
+
+      <article class="svc reveal group rounded-2xl border border-ink-900/8 bg-white p-7 shadow-soft hover:shadow-card hover:border-copper/30" data-delay="1">
+        <span class="svc-ico grid place-items-center w-14 h-14 rounded-2xl bg-ink-900 text-copper-light group-hover:bg-copper group-hover:text-white"><i data-lucide="layout-panel-top" class="w-7 h-7"></i></span>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink-900">Flachdächer</h3>
+        <p class="mt-2 text-ink-600/80 leading-relaxed text-[15px]">Sichere Abdichtung mit Bitumen, Kunststoff oder Gründach-Aufbau – inklusive fachgerechter Entwässerung.</p>
+        <span class="arrow mt-4 inline-flex items-center gap-1.5 text-copper font-semibold text-sm">Mehr erfahren <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </article>
+
+      <article class="svc reveal group rounded-2xl border border-ink-900/8 bg-white p-7 shadow-soft hover:shadow-card hover:border-copper/30" data-delay="2">
+        <span class="svc-ico grid place-items-center w-14 h-14 rounded-2xl bg-ink-900 text-copper-light group-hover:bg-copper group-hover:text-white"><i data-lucide="hammer" class="w-7 h-7"></i></span>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink-900">Dachsanierung</h3>
+        <p class="mt-2 text-ink-600/80 leading-relaxed text-[15px]">Energetische Sanierung und Modernisierung – mehr Wohnkomfort, weniger Heizkosten, ein Dach für Jahrzehnte.</p>
+        <span class="arrow mt-4 inline-flex items-center gap-1.5 text-copper font-semibold text-sm">Mehr erfahren <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </article>
+
+      <article class="svc reveal group rounded-2xl border border-ink-900/8 bg-white p-7 shadow-soft hover:shadow-card hover:border-copper/30">
+        <span class="svc-ico grid place-items-center w-14 h-14 rounded-2xl bg-ink-900 text-copper-light group-hover:bg-copper group-hover:text-white"><i data-lucide="panels-top-left" class="w-7 h-7"></i></span>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink-900">Dachfenster</h3>
+        <p class="mt-2 text-ink-600/80 leading-relaxed text-[15px]">Einbau und Austausch von VELUX &amp; Co. – mehr Licht, frische Luft und ein wohnliches Dachgeschoss.</p>
+        <span class="arrow mt-4 inline-flex items-center gap-1.5 text-copper font-semibold text-sm">Mehr erfahren <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </article>
+
+      <article class="svc reveal group rounded-2xl border border-ink-900/8 bg-white p-7 shadow-soft hover:shadow-card hover:border-copper/30" data-delay="1">
+        <span class="svc-ico grid place-items-center w-14 h-14 rounded-2xl bg-ink-900 text-copper-light group-hover:bg-copper group-hover:text-white"><i data-lucide="wrench" class="w-7 h-7"></i></span>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink-900">Dachreparaturen</h3>
+        <p class="mt-2 text-ink-600/80 leading-relaxed text-[15px]">Undichte Stelle oder Sturmschaden? Wir reparieren schnell und zuverlässig – bevor aus klein groß wird.</p>
+        <span class="arrow mt-4 inline-flex items-center gap-1.5 text-copper font-semibold text-sm">Mehr erfahren <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </article>
+
+      <article class="svc reveal group rounded-2xl border border-ink-900/8 bg-white p-7 shadow-soft hover:shadow-card hover:border-copper/30" data-delay="2">
+        <span class="svc-ico grid place-items-center w-14 h-14 rounded-2xl bg-ink-900 text-copper-light group-hover:bg-copper group-hover:text-white"><i data-lucide="shield-check" class="w-7 h-7"></i></span>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink-900">Dachwartung</h3>
+        <p class="mt-2 text-ink-600/80 leading-relaxed text-[15px]">Regelmäßige Inspektion und Pflege – wir erkennen Schäden früh und verlängern die Lebensdauer Ihres Daches.</p>
+        <span class="arrow mt-4 inline-flex items-center gap-1.5 text-copper font-semibold text-sm">Mehr erfahren <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </article>
+
+      <article class="svc reveal group rounded-2xl border border-ink-900/8 bg-white p-7 shadow-soft hover:shadow-card hover:border-copper/30">
+        <span class="svc-ico grid place-items-center w-14 h-14 rounded-2xl bg-ink-900 text-copper-light group-hover:bg-copper group-hover:text-white"><i data-lucide="waves" class="w-7 h-7"></i></span>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink-900">Dachrinnen</h3>
+        <p class="mt-2 text-ink-600/80 leading-relaxed text-[15px]">Montage, Reinigung und Reparatur von Dachrinnen und Fallrohren – für eine zuverlässige Entwässerung.</p>
+        <span class="arrow mt-4 inline-flex items-center gap-1.5 text-copper font-semibold text-sm">Mehr erfahren <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </article>
+
+      <article class="svc reveal group rounded-2xl border border-ink-900/8 bg-white p-7 shadow-soft hover:shadow-card hover:border-copper/30" data-delay="1">
+        <span class="svc-ico grid place-items-center w-14 h-14 rounded-2xl bg-ink-900 text-copper-light group-hover:bg-copper group-hover:text-white"><i data-lucide="car" class="w-7 h-7"></i></span>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink-900">Carports</h3>
+        <p class="mt-2 text-ink-600/80 leading-relaxed text-[15px]">Maßgefertigte Carports und Überdachungen – wetterfester Schutz für Auto, Eingang und Terrasse.</p>
+        <span class="arrow mt-4 inline-flex items-center gap-1.5 text-copper font-semibold text-sm">Mehr erfahren <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </article>
+
+      <article class="svc reveal group rounded-2xl border border-ink-900/8 bg-white p-7 shadow-soft hover:shadow-card hover:border-copper/30" data-delay="2">
+        <span class="svc-ico grid place-items-center w-14 h-14 rounded-2xl bg-ink-900 text-copper-light group-hover:bg-copper group-hover:text-white"><i data-lucide="building-2" class="w-7 h-7"></i></span>
+        <h3 class="mt-6 font-display font-bold text-xl text-ink-900">Fassadenarbeiten</h3>
+        <p class="mt-2 text-ink-600/80 leading-relaxed text-[15px]">Verkleidung und Bekleidung von Fassaden – wetterfest, gedämmt und mit einer Optik, die zum Dach passt.</p>
+        <span class="arrow mt-4 inline-flex items-center gap-1.5 text-copper font-semibold text-sm">Mehr erfahren <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!--  WARUM WIR                                                     -->
+<!-- ============================================================= -->
+<section id="warum" class="py-24 lg:py-32 bg-ink-900 text-white relative overflow-hidden">
+  <div class="absolute inset-0 hero-grid opacity-40"></div>
+  <div class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-copper/20 blur-3xl"></div>
+  <div class="relative max-w-container mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-14 items-center">
+      <!-- Left: image placeholder -->
+      <div class="reveal">
+        <div class="img-slot rounded-3xl aspect-[4/5] shadow-card" data-img="Warum wir: Dachdeckermeister/Team-Porträt vor Firmenfahrzeug oder auf der Baustelle">
+          <div class="img-ico"><i data-lucide="users" class="w-16 h-16"></i></div>
+          <span class="img-tag">Platzhalter · Team-Foto</span>
+        </div>
+        <!-- Floating badge -->
+        <div class="relative -mt-16 ml-6 w-max">
+          <div class="glass rounded-2xl p-5 flex items-center gap-4 shadow-card">
+            <span class="grid place-items-center w-14 h-14 rounded-xl bg-copper text-white"><i data-lucide="medal" class="w-7 h-7"></i></span>
+            <div>
+              <div class="font-display font-bold text-lg leading-none">Meisterbetrieb</div>
+              <div class="text-white/60 text-sm mt-1">geprüfte Handwerksqualität</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: reasons -->
+      <div>
+        <span class="reveal inline-flex items-center gap-2 text-copper-light font-semibold text-sm uppercase tracking-[.18em]"><span class="w-8 h-px bg-copper-light"></span>Warum Lutzke</span>
+        <h2 class="reveal mt-4 font-display font-extrabold text-[clamp(2rem,4.5vw,3.2rem)] leading-tight" data-delay="1">Warum entscheiden sich<br>Kunden für die Lutzke GmbH?</h2>
+        <p class="reveal mt-4 text-white/70 text-lg leading-relaxed" data-delay="2">Weil ein Dach mehr ist als Ziegel auf Latten. Es schützt, was Ihnen am wichtigsten ist. Genau so behandeln wir jeden Auftrag.</p>
+
+        <div class="mt-9 space-y-5">
+          <div class="reveal flex gap-4">
+            <span class="shrink-0 grid place-items-center w-11 h-11 rounded-xl bg-white/5 border border-white/10 text-copper-light"><i data-lucide="user-check" class="w-5 h-5"></i></span>
+            <div>
+              <h3 class="font-display font-bold text-lg">Ein Ansprechpartner – vom ersten Termin bis zur Abnahme</h3>
+              <p class="text-white/65 mt-1 leading-relaxed">Keine wechselnden Subunternehmer. Sie wissen immer, mit wem Sie sprechen und wer auf Ihrem Dach steht.</p>
+            </div>
+          </div>
+          <div class="reveal flex gap-4" data-delay="1">
+            <span class="shrink-0 grid place-items-center w-11 h-11 rounded-xl bg-white/5 border border-white/10 text-copper-light"><i data-lucide="file-check-2" class="w-5 h-5"></i></span>
+            <div>
+              <h3 class="font-display font-bold text-lg">Festpreis ohne böse Überraschungen</h3>
+              <p class="text-white/65 mt-1 leading-relaxed">Sie bekommen ein klares, nachvollziehbares Angebot. Was vereinbart ist, gilt – das ist für uns Ehrensache.</p>
+            </div>
+          </div>
+          <div class="reveal flex gap-4" data-delay="2">
+            <span class="shrink-0 grid place-items-center w-11 h-11 rounded-xl bg-white/5 border border-white/10 text-copper-light"><i data-lucide="map-pinned" class="w-5 h-5"></i></span>
+            <div>
+              <h3 class="font-display font-bold text-lg">Aus der Region, für die Region</h3>
+              <p class="text-white/65 mt-1 leading-relaxed">Wir sind in Bad Sassendorf zuhause. Kurze Wege, schnelle Hilfe und ein Name, der hier etwas bedeutet.</p>
+            </div>
+          </div>
+          <div class="reveal flex gap-4" data-delay="3">
+            <span class="shrink-0 grid place-items-center w-11 h-11 rounded-xl bg-white/5 border border-white/10 text-copper-light"><i data-lucide="leaf" class="w-5 h-5"></i></span>
+            <div>
+              <h3 class="font-display font-bold text-lg">Sauber gearbeitet, sauber hinterlassen</h3>
+              <p class="text-white/65 mt-1 leading-relaxed">Am Ende steht ein perfektes Dach – und ein Grundstück, das so aussieht, als wären wir nie dagewesen.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#kontakt" class="reveal mt-9 inline-flex items-center gap-2.5 rounded-full bg-copper hover:bg-copper-dark text-white font-semibold px-7 py-3.5 transition shadow-glow" data-delay="2">
+          Jetzt unverbindlich anfragen <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!--  REFERENZEN (Masonry)                                          -->
+<!-- ============================================================= -->
+<section id="referenzen" class="py-24 lg:py-32 bg-mist">
+  <div class="max-w-container mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+      <div class="max-w-2xl">
+        <span class="reveal inline-flex items-center gap-2 text-copper font-semibold text-sm uppercase tracking-[.18em]"><span class="w-8 h-px bg-copper"></span>Referenzen</span>
+        <h2 class="reveal mt-4 font-display font-extrabold text-ink-900 text-[clamp(2rem,4.5vw,3.2rem)] leading-tight" data-delay="1">Dächer, die für sich sprechen.</h2>
+        <p class="reveal mt-4 text-lg text-ink-600/80 leading-relaxed" data-delay="2">Ein kleiner Auszug aus unseren Projekten im Kreis Soest. Jedes Dach ein Unikat – und ein zufriedener Kunde.</p>
+      </div>
+      <a href="#kontakt" class="reveal shrink-0 inline-flex items-center gap-2 text-ink-900 font-semibold ul" data-delay="2">Ihr Projekt könnte das nächste sein <i data-lucide="arrow-up-right" class="w-4 h-4 text-copper"></i></a>
+    </div>
+
+    <!-- Masonry via columns -->
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-5 [&>*]:mb-5">
+
+      <!-- Before/After feature card -->
+      <figure class="reveal break-inside-avoid rounded-2xl overflow-hidden shadow-soft bg-ink-900 group">
+        <div class="ba-wrap relative aspect-[4/3] select-none" id="ba">
+          <!-- After (full) -->
+          <div class="img-slot absolute inset-0" data-img="Nachher: frisch saniertes Steildach">
+            <div class="img-ico"><i data-lucide="image" class="w-12 h-12"></i></div>
+            <span class="img-tag">Nachher</span>
+          </div>
+          <!-- Before (clipped) -->
+          <div id="ba-before" class="absolute inset-0" style="clip-path:inset(0 50% 0 0)">
+            <div class="img-slot absolute inset-0" style="filter:grayscale(.55) brightness(.7)" data-img="Vorher: altes, verwittertes Dach">
+              <div class="img-ico"><i data-lucide="image-off" class="w-12 h-12"></i></div>
+              <span class="img-tag">Vorher</span>
+            </div>
+          </div>
+          <!-- handle line -->
+          <div id="ba-line" class="absolute top-0 bottom-0 w-0.5 bg-white/90 pointer-events-none" style="left:50%">
+            <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid place-items-center w-9 h-9 rounded-full bg-white text-copper shadow-lg"><i data-lucide="move-horizontal" class="w-4 h-4"></i></span>
+          </div>
+          <input id="ba-range" type="range" min="0" max="100" value="50" class="absolute inset-0 w-full h-full cursor-ew-resize opacity-0" aria-label="Vorher-Nachher-Regler" />
+        </div>
+        <figcaption class="p-5 bg-white">
+          <div class="flex items-center justify-between">
+            <h3 class="font-display font-bold text-ink-900">Komplette Dachsanierung</h3>
+            <span class="text-xs font-semibold text-copper bg-copper-50 rounded-full px-3 py-1">Vorher / Nachher</span>
+          </div>
+          <p class="text-sm text-ink-600/70 mt-1.5 flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>Einfamilienhaus · Bad Sassendorf</p>
+        </figcaption>
+      </figure>
+
+      <!-- gallery cards -->
+      <figure class="reveal break-inside-avoid rounded-2xl overflow-hidden shadow-soft relative group" data-delay="1">
+        <div class="img-slot aspect-[3/4]" data-img="Neueindeckung Steildach mit Tonziegeln">
+          <div class="img-ico"><i data-lucide="image" class="w-12 h-12"></i></div>
+          <span class="img-tag">Platzhalter · Projektfoto</span>
+        </div>
+        <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-ink-900/90 to-transparent translate-y-2 group-hover:translate-y-0 transition">
+          <h3 class="font-display font-bold text-white">Neueindeckung mit Tonziegel</h3>
+          <p class="text-white/70 text-sm mt-1 flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>Soest</p>
+        </figcaption>
+      </figure>
+
+      <figure class="reveal break-inside-avoid rounded-2xl overflow-hidden shadow-soft relative group" data-delay="2">
+        <div class="img-slot aspect-square" data-img="Flachdach Gewerbeobjekt mit Abdichtung">
+          <div class="img-ico"><i data-lucide="image" class="w-12 h-12"></i></div>
+          <span class="img-tag">Platzhalter · Projektfoto</span>
+        </div>
+        <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-ink-900/90 to-transparent translate-y-2 group-hover:translate-y-0 transition">
+          <h3 class="font-display font-bold text-white">Flachdach Gewerbehalle</h3>
+          <p class="text-white/70 text-sm mt-1 flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>Werl</p>
+        </figcaption>
+      </figure>
+
+      <figure class="reveal break-inside-avoid rounded-2xl overflow-hidden shadow-soft relative group">
+        <div class="img-slot aspect-square" data-img="Dachfenster-Einbau, helles Dachgeschoss">
+          <div class="img-ico"><i data-lucide="image" class="w-12 h-12"></i></div>
+          <span class="img-tag">Platzhalter · Projektfoto</span>
+        </div>
+        <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-ink-900/90 to-transparent translate-y-2 group-hover:translate-y-0 transition">
+          <h3 class="font-display font-bold text-white">Dachfenster &amp; Gauben</h3>
+          <p class="text-white/70 text-sm mt-1 flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>Lippstadt</p>
+        </figcaption>
+      </figure>
+
+      <figure class="reveal break-inside-avoid rounded-2xl overflow-hidden shadow-soft relative group" data-delay="1">
+        <div class="img-slot aspect-[3/4]" data-img="Schieferdach Detailaufnahme Handwerk">
+          <div class="img-ico"><i data-lucide="image" class="w-12 h-12"></i></div>
+          <span class="img-tag">Platzhalter · Projektfoto</span>
+        </div>
+        <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-ink-900/90 to-transparent translate-y-2 group-hover:translate-y-0 transition">
+          <h3 class="font-display font-bold text-white">Schiefer-Eindeckung</h3>
+          <p class="text-white/70 text-sm mt-1 flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>Bad Sassendorf</p>
+        </figcaption>
+      </figure>
+
+      <figure class="reveal break-inside-avoid rounded-2xl overflow-hidden shadow-soft relative group" data-delay="2">
+        <div class="img-slot aspect-square" data-img="Carport aus Holz, modern">
+          <div class="img-ico"><i data-lucide="image" class="w-12 h-12"></i></div>
+          <span class="img-tag">Platzhalter · Projektfoto</span>
+        </div>
+        <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-ink-900/90 to-transparent translate-y-2 group-hover:translate-y-0 transition">
+          <h3 class="font-display font-bold text-white">Carport in Holzbauweise</h3>
+          <p class="text-white/70 text-sm mt-1 flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>Ense</p>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!--  ABLAUF                                                        -->
+<!-- ============================================================= -->
+<section id="ablauf" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-container mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="reveal inline-flex items-center gap-2 text-copper font-semibold text-sm uppercase tracking-[.18em] justify-center"><span class="w-8 h-px bg-copper"></span>So arbeiten wir<span class="w-8 h-px bg-copper"></span></span>
+      <h2 class="reveal mt-4 font-display font-extrabold text-ink-900 text-[clamp(2rem,4.5vw,3.2rem)] leading-tight" data-delay="1">In 5 klaren Schritten zu Ihrem neuen Dach</h2>
+      <p class="reveal mt-4 text-lg text-ink-600/80" data-delay="2">Transparent, planbar und ohne Stress – Sie wissen jederzeit, was als Nächstes passiert.</p>
+    </div>
+
+    <div class="relative grid md:grid-cols-5 gap-8 md:gap-4">
+      <!-- connecting line -->
+      <div class="hidden md:block absolute top-8 left-[10%] right-[10%] h-px bg-gradient-to-r from-copper/0 via-copper/40 to-copper/0"></div>
+
+      <div class="reveal relative text-center">
+        <div class="mx-auto grid place-items-center w-16 h-16 rounded-2xl bg-ink-900 text-white font-display font-extrabold text-xl shadow-card relative z-10">1</div>
+        <span class="mt-5 inline-grid place-items-center w-10 h-10 rounded-full bg-copper-50 text-copper"><i data-lucide="message-square-text" class="w-5 h-5"></i></span>
+        <h3 class="mt-3 font-display font-bold text-lg text-ink-900">Anfrage</h3>
+        <p class="mt-1.5 text-sm text-ink-600/75 leading-relaxed">Sie melden sich – telefonisch oder über das Formular. Wir hören zu.</p>
+      </div>
+
+      <div class="reveal relative text-center" data-delay="1">
+        <div class="mx-auto grid place-items-center w-16 h-16 rounded-2xl bg-ink-900 text-white font-display font-extrabold text-xl shadow-card relative z-10">2</div>
+        <span class="mt-5 inline-grid place-items-center w-10 h-10 rounded-full bg-copper-50 text-copper"><i data-lucide="map-pin-house" class="w-5 h-5"></i></span>
+        <h3 class="mt-3 font-display font-bold text-lg text-ink-900">Vor-Ort-Termin</h3>
+        <p class="mt-1.5 text-sm text-ink-600/75 leading-relaxed">Wir begutachten Ihr Dach in Ruhe und beraten Sie ehrlich.</p>
+      </div>
+
+      <div class="reveal relative text-center" data-delay="2">
+        <div class="mx-auto grid place-items-center w-16 h-16 rounded-2xl bg-ink-900 text-white font-display font-extrabold text-xl shadow-card relative z-10">3</div>
+        <span class="mt-5 inline-grid place-items-center w-10 h-10 rounded-full bg-copper-50 text-copper"><i data-lucide="file-text" class="w-5 h-5"></i></span>
+        <h3 class="mt-3 font-display font-bold text-lg text-ink-900">Angebot</h3>
+        <p class="mt-1.5 text-sm text-ink-600/75 leading-relaxed">Sie erhalten ein klares Festpreis-Angebot – verständlich und fair.</p>
+      </div>
+
+      <div class="reveal relative text-center" data-delay="3">
+        <div class="mx-auto grid place-items-center w-16 h-16 rounded-2xl bg-copper text-white font-display font-extrabold text-xl shadow-glow relative z-10">4</div>
+        <span class="mt-5 inline-grid place-items-center w-10 h-10 rounded-full bg-copper-50 text-copper"><i data-lucide="hard-hat" class="w-5 h-5"></i></span>
+        <h3 class="mt-3 font-display font-bold text-lg text-ink-900">Ausführung</h3>
+        <p class="mt-1.5 text-sm text-ink-600/75 leading-relaxed">Unser Meisterteam arbeitet termintreu, sauber und präzise.</p>
+      </div>
+
+      <div class="reveal relative text-center" data-delay="4">
+        <div class="mx-auto grid place-items-center w-16 h-16 rounded-2xl bg-ink-900 text-white font-display font-extrabold text-xl shadow-card relative z-10">5</div>
+        <span class="mt-5 inline-grid place-items-center w-10 h-10 rounded-full bg-copper-50 text-copper"><i data-lucide="circle-check-big" class="w-5 h-5"></i></span>
+        <h3 class="mt-3 font-display font-bold text-lg text-ink-900">Abnahme</h3>
+        <p class="mt-1.5 text-sm text-ink-600/75 leading-relaxed">Gemeinsame Endkontrolle – erst wenn Sie zufrieden sind, sind wir es auch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!--  BEWERTUNGEN                                                   -->
+<!-- ============================================================= -->
+<section id="bewertungen" class="py-24 lg:py-32 bg-mist">
+  <div class="max-w-container mx-auto px-6">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+      <div class="max-w-2xl">
+        <span class="reveal inline-flex items-center gap-2 text-copper font-semibold text-sm uppercase tracking-[.18em]"><span class="w-8 h-px bg-copper"></span>Bewertungen</span>
+        <h2 class="reveal mt-4 font-display font-extrabold text-ink-900 text-[clamp(2rem,4.5vw,3.2rem)] leading-tight" data-delay="1">Was unsere Kunden sagen</h2>
+      </div>
+      <!-- google badge -->
+      <div class="reveal flex items-center gap-4 rounded-2xl bg-white shadow-soft px-6 py-4" data-delay="2">
+        <svg viewBox="0 0 48 48" class="w-10 h-10"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-display font-extrabold text-2xl text-ink-900">4,9</span>
+            <span class="flex text-copper">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </span>
+          </div>
+          <div class="text-sm text-ink-600/70 mt-0.5">aus 127 Google-Bewertungen</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- review -->
+      <article class="reveal rounded-2xl bg-white p-7 shadow-soft hover:shadow-card transition">
+        <div class="flex items-center justify-between">
+          <div class="flex text-copper">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <i data-lucide="quote" class="w-7 h-7 text-ink-900/10"></i>
+        </div>
+        <p class="mt-4 text-ink-700 leading-relaxed">„Vom Angebot bis zur Abnahme alles top. Das Team war pünktlich, freundlich und hat unser Dach in einer Woche neu eingedeckt. Die Baustelle war jeden Abend besenrein. Absolute Empfehlung!"</p>
+        <div class="mt-6 flex items-center gap-3">
+          <span class="grid place-items-center w-11 h-11 rounded-full bg-copper-50 text-copper font-display font-bold">MB</span>
+          <div><div class="font-semibold text-ink-900">Michael B.</div><div class="text-sm text-ink-600/60">Bad Sassendorf</div></div>
+        </div>
+      </article>
+
+      <article class="reveal rounded-2xl bg-white p-7 shadow-soft hover:shadow-card transition" data-delay="1">
+        <div class="flex items-center justify-between">
+          <div class="flex text-copper">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <i data-lucide="quote" class="w-7 h-7 text-ink-900/10"></i>
+        </div>
+        <p class="mt-4 text-ink-700 leading-relaxed">„Nach dem Sturm hatten wir eine undichte Stelle. Herr Lutzke war am nächsten Tag da und hat alles fachmännisch repariert. So stellt man sich einen Handwerker vor – ehrlich und zuverlässig."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <span class="grid place-items-center w-11 h-11 rounded-full bg-copper-50 text-copper font-display font-bold">SK</span>
+          <div><div class="font-semibold text-ink-900">Sabine K.</div><div class="text-sm text-ink-600/60">Soest</div></div>
+        </div>
+      </article>
+
+      <article class="reveal rounded-2xl bg-white p-7 shadow-soft hover:shadow-card transition" data-delay="2">
+        <div class="flex items-center justify-between">
+          <div class="flex text-copper">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <i data-lucide="quote" class="w-7 h-7 text-ink-900/10"></i>
+        </div>
+        <p class="mt-4 text-ink-700 leading-relaxed">„Wir haben unser Flachdach sanieren lassen. Faire Beratung, sauberer Festpreis, keine versteckten Kosten. Die Jungs wissen, was sie tun. Wir sind rundum zufrieden."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <span class="grid place-items-center w-11 h-11 rounded-full bg-copper-50 text-copper font-display font-bold">TH</span>
+          <div><div class="font-semibold text-ink-900">Thomas H.</div><div class="text-sm text-ink-600/60">Werl</div></div>
+        </div>
+      </article>
+
+      <article class="reveal rounded-2xl bg-white p-7 shadow-soft hover:shadow-card transition">
+        <div class="flex items-center justify-between">
+          <div class="flex text-copper">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <i data-lucide="quote" class="w-7 h-7 text-ink-900/10"></i>
+        </div>
+        <p class="mt-4 text-ink-700 leading-relaxed">„Neue Dachfenster im Schlafzimmer – endlich Licht und Luft! Saubere Arbeit, alles in einem Tag erledigt und super erklärt. Vielen Dank an das ganze Team."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <span class="grid place-items-center w-11 h-11 rounded-full bg-copper-50 text-copper font-display font-bold">CW</span>
+          <div><div class="font-semibold text-ink-900">Christina W.</div><div class="text-sm text-ink-600/60">Lippstadt</div></div>
+        </div>
+      </article>
+
+      <article class="reveal rounded-2xl bg-white p-7 shadow-soft hover:shadow-card transition" data-delay="1">
+        <div class="flex items-center justify-between">
+          <div class="flex text-copper">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <i data-lucide="quote" class="w-7 h-7 text-ink-900/10"></i>
+        </div>
+        <p class="mt-4 text-ink-700 leading-relaxed">„Komplette Dachsanierung mit Dämmung. Die Heizkosten sind spürbar gesunken und das Haus sieht aus wie neu. Kompetente Beratung von Anfang bis Ende."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <span class="grid place-items-center w-11 h-11 rounded-full bg-copper-50 text-copper font-display font-bold">AF</span>
+          <div><div class="font-semibold text-ink-900">Andreas F.</div><div class="text-sm text-ink-600/60">Ense</div></div>
+        </div>
+      </article>
+
+      <article class="reveal rounded-2xl bg-white p-7 shadow-soft hover:shadow-card transition" data-delay="2">
+        <div class="flex items-center justify-between">
+          <div class="flex text-copper">
+            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+          </div>
+          <i data-lucide="quote" class="w-7 h-7 text-ink-900/10"></i>
+        </div>
+        <p class="mt-4 text-ink-700 leading-relaxed">„Endlich ein Betrieb, der zurückruft und Termine einhält! Die Dachrinnen wurden erneuert, alles sauber dokumentiert. Preis-Leistung absolut stimmig. Gerne wieder."</p>
+        <div class="mt-6 flex items-center gap-3">
+          <span class="grid place-items-center w-11 h-11 rounded-full bg-copper-50 text-copper font-display font-bold">PR</span>
+          <div><div class="font-semibold text-ink-900">Peter R.</div><div class="text-sm text-ink-600/60">Bad Sassendorf</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!--  FAQ                                                           -->
+<!-- ============================================================= -->
+<section id="faq" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-container mx-auto px-6">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-4">
+        <span class="reveal inline-flex items-center gap-2 text-copper font-semibold text-sm uppercase tracking-[.18em]"><span class="w-8 h-px bg-copper"></span>FAQ</span>
+        <h2 class="reveal mt-4 font-display font-extrabold text-ink-900 text-[clamp(2rem,4.5vw,3rem)] leading-tight" data-delay="1">Häufige Fragen rund ums Dach</h2>
+        <p class="reveal mt-4 text-ink-600/80 leading-relaxed" data-delay="2">Sie haben eine Frage, die hier nicht beantwortet wird? Rufen Sie uns an – wir nehmen uns Zeit.</p>
+        <a href="#kontakt" class="reveal mt-6 inline-flex items-center gap-2 rounded-full bg-ink-900 hover:bg-ink-700 text-white font-semibold px-6 py-3 transition" data-delay="2"><i data-lucide="phone" class="w-4 h-4 text-copper-light"></i> Frage stellen</a>
+      </div>
+
+      <div class="lg:col-span-8 reveal" data-delay="1">
+        <div class="divide-y divide-ink-900/8 border-y border-ink-900/8">
+
+          <div class="faq-item">
+            <button class="faq-q w-full flex items-center justify-between gap-4 text-left py-5">
+              <span class="font-display font-semibold text-lg text-ink-900">Was kostet eine Dachsanierung in Bad Sassendorf?</span>
+              <i data-lucide="chevron-down" class="faq-chev w-5 h-5 text-copper shrink-0"></i>
+            </button>
+            <div class="faq-a"><p class="pb-5 text-ink-600/80 leading-relaxed">Die Kosten hängen von Dachfläche, Dachform, Material und Dämmung ab. Nach einem kostenlosen Vor-Ort-Termin erhalten Sie von uns ein transparentes Festpreis-Angebot – ohne versteckte Posten. So wissen Sie genau, womit Sie rechnen können.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q w-full flex items-center justify-between gap-4 text-left py-5">
+              <span class="font-display font-semibold text-lg text-ink-900">Wie schnell sind Sie bei einem Dachschaden vor Ort?</span>
+              <i data-lucide="chevron-down" class="faq-chev w-5 h-5 text-copper shrink-0"></i>
+            </button>
+            <div class="faq-a"><p class="pb-5 text-ink-600/80 leading-relaxed">Bei akuten Schäden – etwa nach Sturm oder Starkregen – handeln wir kurzfristig, in der Regel innerhalb von 24 bis 48 Stunden. Da wir in Bad Sassendorf ansässig sind, sind die Wege im Kreis Soest kurz und wir schnell bei Ihnen.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q w-full flex items-center justify-between gap-4 text-left py-5">
+              <span class="font-display font-semibold text-lg text-ink-900">In welchen Orten sind Sie tätig?</span>
+              <i data-lucide="chevron-down" class="faq-chev w-5 h-5 text-copper shrink-0"></i>
+            </button>
+            <div class="faq-a"><p class="pb-5 text-ink-600/80 leading-relaxed">Wir arbeiten in Bad Sassendorf und im gesamten Kreis Soest – darunter Soest, Werl, Lippstadt, Ense, Möhnesee, Welver und die umliegenden Gemeinden. Sprechen Sie uns einfach an, ob Ihr Ort dabei ist.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q w-full flex items-center justify-between gap-4 text-left py-5">
+              <span class="font-display font-semibold text-lg text-ink-900">Übernehmen Sie auch kleine Reparaturen?</span>
+              <i data-lucide="chevron-down" class="faq-chev w-5 h-5 text-copper shrink-0"></i>
+            </button>
+            <div class="faq-a"><p class="pb-5 text-ink-600/80 leading-relaxed">Selbstverständlich. Ob ein verrutschter Ziegel, eine undichte Stelle oder eine defekte Dachrinne – kein Auftrag ist uns zu klein. Oft verhindert eine kleine Reparatur zur richtigen Zeit einen großen, teuren Schaden.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q w-full flex items-center justify-between gap-4 text-left py-5">
+              <span class="font-display font-semibold text-lg text-ink-900">Beraten Sie auch zu Förderungen bei der Dachsanierung?</span>
+              <i data-lucide="chevron-down" class="faq-chev w-5 h-5 text-copper shrink-0"></i>
+            </button>
+            <div class="faq-a"><p class="pb-5 text-ink-600/80 leading-relaxed">Ja. Bei energetischen Maßnahmen wie einer Dachdämmung gibt es oft attraktive Fördermöglichkeiten. Wir zeigen Ihnen, welche Optionen für Ihr Vorhaben in Frage kommen, und planen die Sanierung entsprechend.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q w-full flex items-center justify-between gap-4 text-left py-5">
+              <span class="font-display font-semibold text-lg text-ink-900">Wie lange dauert eine komplette Neueindeckung?</span>
+              <i data-lucide="chevron-down" class="faq-chev w-5 h-5 text-copper shrink-0"></i>
+            </button>
+            <div class="faq-a"><p class="pb-5 text-ink-600/80 leading-relaxed">Ein typisches Einfamilienhaus-Dach decken wir in der Regel innerhalb von einer bis zwei Wochen neu ein – abhängig von Größe, Witterung und Umfang der Arbeiten. Den genauen Zeitrahmen nennen wir Ihnen verbindlich im Angebot.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q w-full flex items-center justify-between gap-4 text-left py-5">
+              <span class="font-display font-semibold text-lg text-ink-900">Bekomme ich eine Garantie auf die Arbeiten?</span>
+              <i data-lucide="chevron-down" class="faq-chev w-5 h-5 text-copper shrink-0"></i>
+            </button>
+            <div class="faq-a"><p class="pb-5 text-ink-600/80 leading-relaxed">Ja. Als Meisterbetrieb arbeiten wir nach den anerkannten Regeln des Dachdeckerhandwerks und gewähren die gesetzliche Gewährleistung. Auf verwendete Materialien gelten zusätzlich die Herstellergarantien.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q w-full flex items-center justify-between gap-4 text-left py-5">
+              <span class="font-display font-semibold text-lg text-ink-900">Ist die Erstberatung wirklich kostenlos?</span>
+              <i data-lucide="chevron-down" class="faq-chev w-5 h-5 text-copper shrink-0"></i>
+            </button>
+            <div class="faq-a"><p class="pb-5 text-ink-600/80 leading-relaxed">Ja, der erste Beratungstermin und das Angebot sind für Sie völlig unverbindlich und kostenlos. Sie entscheiden in Ruhe, ob und wann Sie uns beauftragen – ganz ohne Druck.</p></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!--  KONTAKT                                                       -->
+<!-- ============================================================= -->
+<section id="kontakt" class="relative bg-ink-900 text-white overflow-hidden">
+  <div class="absolute inset-0 hero-grid opacity-40"></div>
+  <div class="absolute -bottom-40 -left-40 w-[28rem] h-[28rem] rounded-full bg-copper/15 blur-3xl"></div>
+  <div class="relative max-w-container mx-auto px-6 py-24 lg:py-32">
+    <div class="grid lg:grid-cols-2 gap-14">
+      <!-- left -->
+      <div>
+        <span class="reveal inline-flex items-center gap-2 text-copper-light font-semibold text-sm uppercase tracking-[.18em]"><span class="w-8 h-px bg-copper-light"></span>Kontakt</span>
+        <h2 class="reveal mt-4 font-display font-extrabold text-[clamp(2rem,4.5vw,3.4rem)] leading-tight" data-delay="1">Lassen Sie uns über<br>Ihr Dach sprechen.</h2>
+        <p class="reveal mt-5 text-white/70 text-lg leading-relaxed max-w-md" data-delay="2">Kostenlose Beratung, ehrliche Einschätzung, faires Angebot. Schreiben Sie uns oder rufen Sie an – wir freuen uns auf Ihr Projekt.</p>
+
+        <div class="mt-10 space-y-4">
+          <a href="tel:+4929217120800" class="reveal flex items-center gap-4 group">
+            <span class="grid place-items-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-copper-light group-hover:bg-copper group-hover:text-white transition"><i data-lucide="phone" class="w-5 h-5"></i></span>
+            <span><span class="block text-sm text-white/50">Telefon</span><span class="font-semibold text-lg">02921 71 20 800</span></span>
+          </a>
+          <a href="mailto:info@lutzke-bedachungen.de" class="reveal flex items-center gap-4 group" data-delay="1">
+            <span class="grid place-items-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-copper-light group-hover:bg-copper group-hover:text-white transition"><i data-lucide="mail" class="w-5 h-5"></i></span>
+            <span><span class="block text-sm text-white/50">E-Mail</span><span class="font-semibold text-lg">info@lutzke-bedachungen.de</span></span>
+          </a>
+          <div class="reveal flex items-center gap-4" data-delay="2">
+            <span class="grid place-items-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-copper-light"><i data-lucide="map-pin" class="w-5 h-5"></i></span>
+            <span><span class="block text-sm text-white/50">Standort</span><span class="font-semibold text-lg">Musterstraße 12, 59505 Bad Sassendorf</span></span>
+          </div>
+          <div class="reveal flex items-center gap-4" data-delay="3">
+            <span class="grid place-items-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-copper-light"><i data-lucide="clock" class="w-5 h-5"></i></span>
+            <span><span class="block text-sm text-white/50">Öffnungszeiten</span><span class="font-semibold text-lg">Mo–Fr 07:00–17:00 Uhr</span></span>
+          </div>
+        </div>
+
+        <!-- Google Maps Platzhalter -->
+        <div class="reveal mt-8 img-slot rounded-2xl h-52 border border-white/10" data-img="Google-Maps-Karte: Firmenstandort Bad Sassendorf einbetten (iframe)" data-delay="2">
+          <div class="img-ico flex-col gap-2"><i data-lucide="map" class="w-10 h-10"></i></div>
+          <span class="img-tag">Platzhalter · Google-Maps-Einbettung</span>
+        </div>
+      </div>
+
+      <!-- right: form -->
+      <div class="reveal" data-delay="1">
+        <form class="glass rounded-3xl p-7 sm:p-9 shadow-card" onsubmit="return handleSubmit(event)">
+          <h3 class="font-display font-bold text-2xl">Kostenlose Beratung anfragen</h3>
+          <p class="text-white/60 mt-1.5 text-sm">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+
+          <div class="mt-7 grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-white/70 mb-1.5">Name *</label>
+              <input required type="text" placeholder="Ihr Name" class="w-full rounded-xl bg-white/5 border border-white/15 px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-copper focus:ring-2 focus:ring-copper/30 transition" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-white/70 mb-1.5">Telefon</label>
+              <input type="tel" placeholder="Für den Rückruf" class="w-full rounded-xl bg-white/5 border border-white/15 px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-copper focus:ring-2 focus:ring-copper/30 transition" />
+            </div>
+          </div>
+          <div class="mt-4">
+            <label class="block text-sm font-medium text-white/70 mb-1.5">E-Mail *</label>
+            <input required type="email" placeholder="name@beispiel.de" class="w-full rounded-xl bg-white/5 border border-white/15 px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-copper focus:ring-2 focus:ring-copper/30 transition" />
+          </div>
+          <div class="mt-4">
+            <label class="block text-sm font-medium text-white/70 mb-1.5">Gewünschte Leistung</label>
+            <select class="w-full rounded-xl bg-white/5 border border-white/15 px-4 py-3 text-white focus:outline-none focus:border-copper focus:ring-2 focus:ring-copper/30 transition">
+              <option class="bg-ink-800">Dachsanierung</option>
+              <option class="bg-ink-800">Neueindeckung</option>
+              <option class="bg-ink-800">Flachdach</option>
+              <option class="bg-ink-800">Dachfenster</option>
+              <option class="bg-ink-800">Dachreparatur</option>
+              <option class="bg-ink-800">Dachwartung</option>
+              <option class="bg-ink-800">Sonstiges</option>
+            </select>
+          </div>
+          <div class="mt-4">
+            <label class="block text-sm font-medium text-white/70 mb-1.5">Ihre Nachricht</label>
+            <textarea rows="4" placeholder="Erzählen Sie uns kurz von Ihrem Vorhaben …" class="w-full rounded-xl bg-white/5 border border-white/15 px-4 py-3 text-white placeholder-white/35 focus:outline-none focus:border-copper focus:ring-2 focus:ring-copper/30 transition resize-none"></textarea>
+          </div>
+          <label class="mt-4 flex items-start gap-3 text-sm text-white/60">
+            <input type="checkbox" required class="mt-1 accent-copper w-4 h-4" />
+            <span>Ich habe die Datenschutzhinweise gelesen und bin mit der Verarbeitung meiner Daten zur Bearbeitung der Anfrage einverstanden.</span>
+          </label>
+          <button type="submit" class="mt-6 w-full inline-flex items-center justify-center gap-2.5 rounded-full bg-copper hover:bg-copper-dark text-white font-semibold text-base px-8 py-4 transition shadow-glow">
+            <i data-lucide="send" class="w-5 h-5"></i> Anfrage absenden
+          </button>
+          <p id="form-note" class="hidden mt-4 text-center text-sm text-copper-light"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!--  FOOTER                                                        -->
+<!-- ============================================================= -->
+<footer class="bg-ink-900 border-t border-white/10 text-white/70">
+  <div class="max-w-container mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-3">
+          <span class="grid place-items-center w-11 h-11 rounded-xl bg-gradient-to-br from-copper to-roof"><i data-lucide="home" class="w-5 h-5 text-white"></i></span>
+          <span class="leading-none"><span class="block font-display font-extrabold text-[19px] text-white">LUTZKE</span><span class="block text-[11px] tracking-[.22em] uppercase text-white/50">Bedachungen GmbH</span></span>
+        </div>
+        <p class="mt-5 text-sm leading-relaxed text-white/55">Ihr Dachdecker-Meisterbetrieb für Bad Sassendorf und den Kreis Soest. Qualität auf jedem Dach – seit über 35 Jahren.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="#" class="grid place-items-center w-10 h-10 rounded-lg bg-white/5 hover:bg-copper hover:text-white transition" aria-label="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+          <a href="#" class="grid place-items-center w-10 h-10 rounded-lg bg-white/5 hover:bg-copper hover:text-white transition" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="#" class="grid place-items-center w-10 h-10 rounded-lg bg-white/5 hover:bg-copper hover:text-white transition" aria-label="WhatsApp"><i data-lucide="message-circle" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-white mb-4">Leistungen</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="#leistungen" class="hover:text-copper-light transition">Dachsanierung</a></li>
+          <li><a href="#leistungen" class="hover:text-copper-light transition">Neueindeckung</a></li>
+          <li><a href="#leistungen" class="hover:text-copper-light transition">Flachdach</a></li>
+          <li><a href="#leistungen" class="hover:text-copper-light transition">Dachfenster</a></li>
+          <li><a href="#leistungen" class="hover:text-copper-light transition">Dachreparaturen</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-white mb-4">Unternehmen</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="#warum" class="hover:text-copper-light transition">Warum wir</a></li>
+          <li><a href="#referenzen" class="hover:text-copper-light transition">Referenzen</a></li>
+          <li><a href="#ablauf" class="hover:text-copper-light transition">Ablauf</a></li>
+          <li><a href="#bewertungen" class="hover:text-copper-light transition">Bewertungen</a></li>
+          <li><a href="#faq" class="hover:text-copper-light transition">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-white mb-4">Kontakt</h4>
+        <ul class="space-y-2.5 text-sm">
+          <li class="flex items-start gap-2.5"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 text-copper-light shrink-0"></i>Musterstraße 12<br>59505 Bad Sassendorf</li>
+          <li class="flex items-center gap-2.5"><i data-lucide="phone" class="w-4 h-4 text-copper-light shrink-0"></i><a href="tel:+4929217120800" class="hover:text-copper-light transition">02921 71 20 800</a></li>
+          <li class="flex items-center gap-2.5"><i data-lucide="mail" class="w-4 h-4 text-copper-light shrink-0"></i><a href="mailto:info@lutzke-bedachungen.de" class="hover:text-copper-light transition">info@lutzke-bedachungen.de</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-7 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/45">
+      <p>© 2026 Lutzke GmbH Bedachungen · Alle Rechte vorbehalten</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-copper-light transition">Impressum</a>
+        <a href="#" class="hover:text-copper-light transition">Datenschutz</a>
+        <a href="#" class="hover:text-copper-light transition">AGB</a>
+      </div>
+    </div>
+    <!-- INTERN: Demo-Hinweis – vor echtem Livegang entfernen -->
+    <p class="mt-6 text-center text-[11px] text-white/25">Unverbindlicher Website-Entwurf · Bilder sind Platzhalter und werden durch echte Fotos der Lutzke GmbH ersetzt.</p>
+  </div>
+</footer>
+
+<!-- Floating Call CTA (mobile) -->
+<a href="tel:+4929217120800" class="float-cta pulse lg:hidden fixed bottom-5 right-5 z-50 grid place-items-center w-14 h-14 rounded-full bg-copper text-white" aria-label="Jetzt anrufen">
+  <i data-lucide="phone" class="w-6 h-6"></i>
+</a>
+
+<!-- ============================================================= -->
+<!--  STRUCTURED DATA (Local SEO)                                  -->
+<!-- ============================================================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RoofingContractor",
+  "name": "Lutzke GmbH Bedachungen",
+  "image": "https://lutzke-bedachungen.de/og-image.jpg",
+  "@id": "https://lutzke-bedachungen.de/",
+  "url": "https://lutzke-bedachungen.de/",
+  "telephone": "+49 2921 7120800",
+  "email": "info@lutzke-bedachungen.de",
+  "priceRange": "€€",
+  "description": "Dachdecker-Meisterbetrieb in Bad Sassendorf. Dachsanierung, Neueindeckung, Flachdach, Dachfenster und Dachreparaturen für den Kreis Soest.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Musterstraße 12",
+    "addressLocality": "Bad Sassendorf",
+    "postalCode": "59505",
+    "addressRegion": "Nordrhein-Westfalen",
+    "addressCountry": "DE"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 51.5847, "longitude": 8.1639 },
+  "areaServed": [
+    { "@type": "City", "name": "Bad Sassendorf" },
+    { "@type": "City", "name": "Soest" },
+    { "@type": "City", "name": "Werl" },
+    { "@type": "City", "name": "Lippstadt" },
+    { "@type": "AdministrativeArea", "name": "Kreis Soest" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "07:00", "closes": "17:00"
+  }],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Dachdecker-Leistungen",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dachsanierung" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Neueindeckung" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Flachdach" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dachfenster" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dachreparaturen" } }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Was kostet eine Dachsanierung in Bad Sassendorf?", "acceptedAnswer": { "@type": "Answer", "text": "Die Kosten hängen von Dachfläche, Dachform, Material und Dämmung ab. Nach einem kostenlosen Vor-Ort-Termin erhalten Sie ein transparentes Festpreis-Angebot ohne versteckte Posten." } },
+    { "@type": "Question", "name": "Wie schnell sind Sie bei einem Dachschaden vor Ort?", "acceptedAnswer": { "@type": "Answer", "text": "Bei akuten Schäden handeln wir in der Regel innerhalb von 24 bis 48 Stunden. Als Betrieb aus Bad Sassendorf sind die Wege im Kreis Soest kurz." } },
+    { "@type": "Question", "name": "In welchen Orten sind Sie tätig?", "acceptedAnswer": { "@type": "Answer", "text": "Wir arbeiten in Bad Sassendorf und im gesamten Kreis Soest, darunter Soest, Werl, Lippstadt, Ense, Möhnesee und Welver." } },
+    { "@type": "Question", "name": "Übernehmen Sie auch kleine Reparaturen?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, kein Auftrag ist uns zu klein – vom verrutschten Ziegel bis zur defekten Dachrinne." } },
+    { "@type": "Question", "name": "Ist die Erstberatung kostenlos?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, der erste Beratungstermin und das Angebot sind unverbindlich und kostenlos." } }
+  ]
+}
+</script>
+
+<!-- ============================================================= -->
+<!--  JS                                                           -->
+<!-- ============================================================= -->
+<script>
+  // Icons
+  lucide.createIcons();
+
+  // Header scroll state
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 30);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
+
+  // Mobile menu
+  const hamb = document.getElementById('hamb');
+  const menu = document.getElementById('mobile-menu');
+  hamb.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    hamb.innerHTML = menu.classList.contains('hidden')
+      ? '<i data-lucide="menu" class="w-7 h-7"></i>'
+      : '<i data-lucide="x" class="w-7 h-7"></i>';
+    lucide.createIcons();
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.add('hidden');
+    hamb.innerHTML = '<i data-lucide="menu" class="w-7 h-7"></i>'; lucide.createIcons();
+  }));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Counter animation
+  const animateCount = (el) => {
+    const target = +el.dataset.count;
+    const dur = 1600; const start = performance.now();
+    const step = (now) => {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(eased * target).toLocaleString('de-DE');
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const countIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); countIO.unobserve(e.target); } });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    });
+  });
+
+  // Before/After slider
+  const baRange = document.getElementById('ba-range');
+  if (baRange) {
+    const before = document.getElementById('ba-before');
+    const line = document.getElementById('ba-line');
+    const upd = (v) => { before.style.clipPath = `inset(0 ${100 - v}% 0 0)`; line.style.left = v + '%'; };
+    baRange.addEventListener('input', e => upd(+e.target.value));
+    upd(50);
+  }
+
+  // Form (Demo)
+  function handleSubmit(e){
+    e.preventDefault();
+    const note = document.getElementById('form-note');
+    note.textContent = '✓ Vielen Dank! Dies ist ein Demo-Formular – im Livebetrieb wird Ihre Anfrage direkt an die Lutzke GmbH gesendet.';
+    note.classList.remove('hidden');
+    e.target.reset();
+    return false;
+  }
+
+  // Active year
+  // (kept static 2026 in footer)
+</script>
+</body>
+</html>
